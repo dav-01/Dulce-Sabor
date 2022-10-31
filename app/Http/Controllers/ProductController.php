@@ -8,49 +8,51 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function index(){
+    public function index()
+    {
 
         return view('products.index', ['products' => Product::all()]);
     }
 
-    public function create(){
-        return view('products.index');
+    public function create()
+    {
+        return view('products.create');
     }
 
-    public function store(Request $request ){
+    public function store(Request $request)
+    {
 
         $request->validate([
-            'name' => 'required', 'price' => 'required', 'quality' => 'required'
+            'name' => 'required', 'description' => 'required', 'price' => 'required', 'quality' => 'required'
         ]);
 
         $product = $request->all();
 
         Product::create($product);
         return redirect()->route('product.index');
-
-
-        /*$producto = new Product($request->input());
-        $producto->saveOrFail();
-        return redirect()->route("product.index")->with("mensaje", "Producto guardado");*/
     }
 
-    public function show(Product $product){
-        
+    public function show(Product $product)
+    {
+
         return view('products.show', compact('product'));
     }
 
-    public function edit(Product $product){
+    public function edit(Product $product)
+    {
         return view('products.edit', ['product' => $product]);
     }
 
-    public function update(Request $request, Product $product){
+    public function update(Request $request, Product $product)
+    {
 
         $product->fill(($request->input()));
         $product->saveOrFail();
         return redirect()->route('product.index')->with("mensaje", "Producto actualizado");
     }
 
-    public function destroy(Product $product){
+    public function destroy(Product $product)
+    {
         $product->delete();
         return redirect()->route('product.index')->with("mensaje", "Producto eliminado");
     }

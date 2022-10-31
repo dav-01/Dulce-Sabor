@@ -18,3 +18,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [ProductController::class,'index']);
 
 Route::resource('product', ProductController::class);
+
