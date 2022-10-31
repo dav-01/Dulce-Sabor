@@ -9,18 +9,13 @@
 <body>
     <h1>Dulce Sabor</h1>
 
-
     <div>
-
         @foreach($products as $product)
-
         <tr>
-            <td>{{$product->description}}</td>
+            <td>{{$product->name}}</td>
         </tr>
-
         @endforeach
-
-
     </div>
+
 </body>
 </html>
