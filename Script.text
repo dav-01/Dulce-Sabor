@@ -1,0 +1,13 @@
+Script de la base de datos Dulce Sabor
+
+Crear base de datos 
+
+# CREATE DATABASE dulce_sabor;
+
+
+Crear tabla de products
+
+# CREATE TABLE products;
+
+Insertar registros en la tabla Products
+# INSERT INTO `products` (`id`, `created_at`, `updated_at`, `name`, `description`, `price`, `cantidad`) VALUES ('1', NULL, NULL, 'Dulce 1', 'Dulce 1', '200', '7'), ('2', NULL, NULL, 'Dulce 2', 'Dulce 2', '400', '4');
